@@ -1,0 +1,18 @@
+<p>b1calculator works!</p>
+<div class="input-group">
+  <label for="num1"></label>
+  <input #number1
+    type="number"
+    class="form-control" name="" id="num1" aria-describedby="helpId" placeholder="">
+</div>
+<div class="input-group">
+  <label for="num2"></label>
+  <input #number2
+         type="number"
+         class="form-control" name="" id="num2" aria-describedby="helpId" placeholder="">
+</div>
+<button type="button" class="btn btn-primary" (click)="sum(number1.value,number2.value)">+</button>
+<button type="button" class="btn btn-primary" (click)="apart(number1.value,number2.value)">-</button>
+<button type="button" class="btn btn-primary" (click)="multi(number1.value,number2.value)">*</button>
+<button type="button" class="btn btn-primary" (click)="dive(number1.value,number2.value)">/</button>
+<h3>{{result}}</h3>
