@@ -11,6 +11,7 @@ import {ArticleComponent} from './ss4/article/article.component';
 import { LikeComponent } from './ss4/like/like.component';
 import { NavbarComponent } from './ss4/navbar/navbar.component';
 import { FooterComponent } from './ss4/footer/footer.component';
+import { Ss2Component } from './ss2/ss2.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { FooterComponent } from './ss4/footer/footer.component';
         ArticleComponent,
         LikeComponent,
         NavbarComponent,
-        FooterComponent
+        FooterComponent,
+        Ss2Component
     ],
     imports: [
         BrowserModule,
