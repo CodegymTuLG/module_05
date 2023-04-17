@@ -1,0 +1,77 @@
+<form class="form" [formGroup]="rfUser">
+  <table>
+    <tr>
+      <td><label for="email">Email</label></td>
+      <td><input #email
+                 type="text"
+                 class="form-control" formControlName="email" id="email">
+        <p class="text-danger" *ngIf="rfUser.controls.email.touched && rfUser.controls.email?.errors?.required">Bắt
+          buộc nhập</p>
+        <p class="text-danger" *ngIf="rfUser.controls.email.touched && rfUser.controls.email?.errors?.email">Phải
+          nhập đúng định dạng email</p></td>
+    </tr>
+    <tr>
+      <td>
+        <label for="password">Password</label></td>
+      <td><input #password
+                 type="text"
+                 class="form-control" formControlName="password" id="password">
+        <p class="text-danger"
+               *ngIf="rfUser.controls.password.touched && rfUser.controls.password?.errors?.required">Bắt buộc
+          nhập</p>
+        <p class="text-danger"
+               *ngIf="rfUser.controls.password.touched && rfUser.controls.password?.errors?.minlength">Phải nhập từ 6 ký
+          tự trở lên</p></td>
+    </tr>
+    <tr>
+      <td><label for="confirmPassword">Confirm Password</label></td>
+      <td><input #confirmPassword
+                 type="text"
+                 class="form-control" formControlName="confirmPassword" id="confirmPassword">
+        <p class="text-danger"
+               *ngIf="rfUser.controls.confirmPassword.touched && rfUser.controls.confirmPassword?.errors?.notSame">confrim
+          password không giống password</p></td>
+    </tr>
+    <tr>
+      <td><label for="country">Country</label></td>
+      <td><select class="form-select" id="country" formControlName="country">
+        <option value="">--Chọn quốc gia--</option>
+        <option value="Việt Nam">Việt Nam</option>
+        <option value="Nhật">Nhật</option>
+        <option value="Lào">Lào</option>
+      </select>
+        <p class="text-danger" *ngIf="rfUser.controls.country.touched && rfUser.controls.country?.errors?.required">Bắt
+          buộc chọn</p></td>
+    </tr>
+    <tr>
+      <td><label for="email">Age</label></td>
+      <td><input #age
+                 type="text"
+                 class="form-control" formControlName="age" id="age">
+        <p class="text-danger" *ngIf="rfUser.controls.age.touched && rfUser.controls.age?.errors?.required">Bắt buộc
+          nhập</p>
+        <p class="text-danger" *ngIf="rfUser.controls.age.touched && rfUser.controls.age?.errors?.invalidAge">Phải lớn
+          hơn 18 tuổi</p></td>
+    </tr>
+    <tr>
+      <td><label class="form-check-label">Gender</label></td>
+      <td><input type="radio" class="form-check-input" formControlName="gender" id="gender" value="nam">
+        Nam
+        <input type="radio" class="form-check-input" formControlName="gender" id="gender" value="nữ">
+        Nữ
+      </td>
+      <p class="text-danger" *ngIf="rfUser.controls.gender.touched && rfUser.controls.gender?.errors?.required">Bắt
+        buộc chọn</p>
+    </tr>
+    <tr>
+      <td><label for="email">Phone number</label></td>
+      <td><input #phone
+                 type="text"
+                 class="form-control" formControlName="phone" id="phone">
+        <p class="text-danger" *ngIf="rfUser.controls.phone.touched && rfUser.controls.phone?.errors?.required">Bắt
+          buộc nhập</p>
+        <p class="text-danger" *ngIf="rfUser.controls.phone.touched && rfUser.controls.phone?.errors?.pattern">Phải
+          nhập đúng định dạng số điện thoại</p></td>
+    </tr>
+  </table>
+</form>

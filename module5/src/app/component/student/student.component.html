@@ -1,0 +1,32 @@
+<h1>Student List</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#createModal">
+  Create
+</button>
+<table class="table">
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Name</th>
+    <th>PhoneNumber</th>
+    <th>Address</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of students; index as i" (click)="showDetail(student)">
+    <td scope="row">{{i + 1}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.phoneNumber}}</td>
+    <td>{{student.address}}</td>
+    <td>
+      <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editModal">
+        Edit
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<app-student-detail [student]="studentDetail"></app-student-detail>
+<!-- Call modal create -->
+<app-student-create (onCreate)="addStudent($event)"></app-student-create>
+

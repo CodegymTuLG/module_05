@@ -1,0 +1,14 @@
+<h1>Countdown</h1>
+
+<div class="group-actions">
+  <button (click)="start()">Start</button>
+  <button (click)="stop()">Stop</button>
+  <button (click)="reset()">Reset</button>
+</div>
+<div class="timer">
+  <input type="number" [(ngModel)]="remainingTime" value="{{remainingTime}}">
+</div>
+<p>{{message}}</p>
+
+
+
