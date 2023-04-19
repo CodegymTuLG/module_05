@@ -29,8 +29,14 @@
                  type="text"
                  class="form-control" formControlName="confirmPassword" id="confirmPassword">
         <p class="text-danger"
-               *ngIf="rfUser.controls.confirmPassword.touched && rfUser.controls.confirmPassword?.errors?.notSame">confrim
-          password không giống password</p></td>
+           *ngIf="rfUser.controls.confirmPassword.touched && rfUser.controls.confirmPassword?.errors?.required">Bắt buộc
+          nhập</p>
+          <p class="text-danger"
+             *ngIf="rfUser.controls.confirmPassword.touched && rfUser.controls.confirmPassword?.errors?.minlength">Phải nhập từ 6 ký
+            tự trở lên</p>
+          <p class="text-danger"
+             *ngIf="rfUser.controls.confirmPassword.touched && rfUser.errors?.notSame">confrim
+            password không giống password</p></td>
     </tr>
     <tr>
       <td><label for="country">Country</label></td>

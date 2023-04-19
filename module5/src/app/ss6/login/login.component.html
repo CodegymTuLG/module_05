@@ -1,0 +1,27 @@
+<form [formGroup]="rfLogin">
+  <table>
+    <tr>
+      <td><label for="email">Email</label></td>
+      <td><input #email
+                 type="text"
+                 class="form-control" formControlName="email" id="email">
+        <p class="text-danger" *ngIf="rfLogin.controls.email.touched && rfLogin.controls.email?.errors?.required">Bắt
+          buộc nhập</p>
+        <p class="text-danger" *ngIf="rfLogin.controls.email.touched && rfLogin.controls.email?.errors?.email">Phải
+          nhập đúng định dạng email</p></td>
+    </tr>
+    <tr>
+      <td>
+        <label for="password">Password</label></td>
+      <td><input #password
+                 type="text"
+                 class="form-control" formControlName="password" id="password">
+        <p class="text-danger"
+           *ngIf="rfLogin.controls.password.touched && rfLogin.controls.password?.errors?.required">Bắt buộc
+          nhập</p>
+        <p class="text-danger"
+           *ngIf="rfLogin.controls.password.touched && rfLogin.controls.password?.errors?.minlength">Phải nhập từ 6 ký
+          tự trở lên</p></td>
+    </tr>
+  </table>
+</form>

@@ -18,27 +18,29 @@ import { StudentCreateComponent } from './component/student-create/student-creat
 import { StudentDetailComponent } from './component/student-detail/student-detail.component';
 import { StudentEditComponent } from './component/student-edit/student-edit.component';
 import { UserComponent } from './ss6/user/user.component';
+import { LoginComponent } from './ss6/login/login.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        Ss3Component,
-        B1calculatorComponent,
-        B2colorComponent,
-        Ss4Component,
-        ArticleComponent,
-        ArticleComponent,
-        LikeComponent,
-        NavbarComponent,
-        FooterComponent,
-        Ss5Component,
-        CountdownComponent,
-        StudentComponent,
-        StudentCreateComponent,
-        StudentDetailComponent,
-        StudentEditComponent,
-        UserComponent
-    ],
+  declarations: [
+    AppComponent,
+    Ss3Component,
+    B1calculatorComponent,
+    B2colorComponent,
+    Ss4Component,
+    ArticleComponent,
+    ArticleComponent,
+    LikeComponent,
+    NavbarComponent,
+    Ss5Component,
+    CountdownComponent,
+    StudentComponent,
+    StudentCreateComponent,
+    StudentDetailComponent,
+    StudentEditComponent,
+    UserComponent,
+    LoginComponent,
+    FooterComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
