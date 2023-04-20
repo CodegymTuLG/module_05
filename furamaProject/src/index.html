@@ -6,8 +6,146 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
   <app-root></app-root>
 </body>
 </html>
+<script>
+  $(document).ready(function () {
+    let flag = $("#flag").val();
+    if (flag == 1) {
+      $("#showlist").modal("show");
+    }
+  })
+
+  let listSubService = [];
+  let listServicePrice = [];
+  let lisSubServiceId = [];
+
+  function addService() {
+    let newService = document.getElementById("addNewService").value;
+    lisSubServiceId.push(GetSubServiceId(newService));
+    listServicePrice.push(GetSubServicePrice(newService));
+    listSubService.push(newService);
+
+    /*show table*/
+    let stringTable = ""
+    stringTable += '    <table class=\'table tab-content\'>\n' +
+      '        <tr>\n' +
+      '            <th>SubService</th>\n' +
+      '            <th>Unit</th>\n' +
+      '            <th>Price</th>\n' +
+      '            <th>Count</th>\n' +
+      '        </tr>\n';
+
+    stringTable +=
+      '        <tr>\n' +
+      '            <td>' + listSubService[0] + '</td>\n' +
+      '            <td>Unit</td>\n' +
+      '            <td>' + listServicePrice[0] + '</td>\n' +
+      '            <td id="count_0" name="count_0">1</td>\n' +
+      '        </tr>\n';
+    if (listSubService.length > 0) {
+      for (let i = 1; i < listSubService.length; i++) {
+        stringTable += '<tr>';
+        console.log("listSubService[i]" + listSubService[i] + ", i=" + i)
+        console.log("listSubService[i-1]" + listSubService[i - 1])
+        if (listSubService[i] != listSubService[i - 1]) {
+          stringTable += '<td>' + listSubService[i] + '</td>';
+          stringTable += '<td></td>';
+          stringTable += '<td>' + listServicePrice[i] + '</td>';
+          stringTable += '<td id="count_' + lisSubServiceId[i] + '" name="count_' + lisSubServiceId[i] + '">1</td>\n';
+        } else {
+          let count_id = "count_" + (i - 1);
+          console.log(count_id);
+          let count = parseInt(document.getElementById(count_id).innerText) + 1;
+          console.log(count);
+          document.getElementById(count_id).innerHTML = "" + count;
+          console.log(count);
+        }
+      }
+    }
+    stringTable += '</tr>';
+    stringTable += '</table>';
+    document.getElementById("table").innerHTML = stringTable;
+    /*show table*/
+
+
+    document.getElementById("shownew").innerText = listSubService;
+    document.getElementById("subServices").value = lisSubServiceId;
+    caculPayment();
+  }
+
+  function caculPayment() {
+    let serviceId = document.getElementById("service_id").value;
+    let deposit = document.getElementById("deposit").value;
+    let sum = 0;
+    for (let price of listServicePrice) {
+      sum += parseInt(price);
+    }
+    if (GetDays() > 0) {
+      document.getElementById("caculResult").value = GetDays() * GetServicePrice(serviceId) - deposit + sum;
+    }
+  }
+
+  function GetSubServiceId(id) {
+    let subId;
+    const els = document.getElementsByClassName("addNewService");
+    for (let el of els) {
+      if (el.value == id) {
+        subId = el.getAttribute('subId');
+        return subId;
+      }
+    }
+  }
+
+  function GetSubServicePrice(id) {
+    let priceData;
+    const els = document.getElementsByClassName("addNewService");
+    for (let el of els) {
+      if (el.value == id) {
+        priceData = el.getAttribute('data');
+        return priceData;
+      }
+    }
+  }
+
+  function GetServicePrice(serviceId) {
+    let priceData;
+    const els = document.getElementsByClassName("service_cus");
+    for (let el of els) {
+      if (el.value == serviceId) {
+        priceData = el.getAttribute('data');
+        return priceData;
+      }
+    }
+  }
+
+  function GetDays() {
+    var startdate = new Date(document.getElementById("startdate").value);
+    var enddate = new Date(document.getElementById("enddate").value);
+    var datediff = parseInt((enddate - startdate) / (24 * 3600 * 1000));
+    document.getElementById("messsage").innerText = "";
+    if (datediff < 0) {
+      document.getElementById("messsage").innerText = "let pick another date !";
+      document.getElementById("caculResult").value = "";
+      return;
+    } else if (datediff == 0) {
+      document.getElementById("messsage").innerText = "";
+      return 1;
+    }
+    return datediff;
+  }
+
+  function checkTrueValue() {
+    let caculResult = document.getElementById("caculResult").value;
+    if (caculResult < 0) {
+      document.getElementById("messsage").innerText = "Payment value is false!";
+      alert("Payment value is false!");
+    }
+  }
+</script>

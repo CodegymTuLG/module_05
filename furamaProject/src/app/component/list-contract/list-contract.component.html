@@ -1,177 +1,58 @@
-<h1>Accompanied Service</h1>
-<!-- Button trigger modal -->
-<div class="d-flex justify-content-end" style="width: 95%;padding-bottom: 10px">
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addServiceModal">
-    Register new contract
-  </button>
-</div>
-<table class="table table-info">
-  <thead>
-  <tr>
-    <th>#</th>
-    <th>Facility</th>
-    <th>Customer</th>
-    <th>Start date</th>
-    <th>End date</th>
-    <th>Deposit</th>
-    <th>Payment</th>
-    <th colspan="2"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>
-      <!-- Button trigger modal -->
-      <button type="button" onclick="addContractDetail('${contract.getContract_id()}','${customer.getName()}')"
-              class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addModal">
-        +
+
+<div class="row" style="height: 81%">
+  <div class="col-2">
+    <app-navigation></app-navigation>
+  </div>
+  <div class="col-10">
+    <h1>Accompanied Service</h1>
+    <!-- Button trigger modal -->
+    <div class="d-flex justify-content-end" style="width: 95%;padding-bottom: 10px">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="showlist" data-bs-target="#addServiceModal">
+        Register new contract
       </button>
-    </td>
-    <td>
-      <!-- Button trigger modal -->
-      <form action="/contract?action=contractDetail" method="post">
-        <input type="hidden" name="contract_id" value="${contract.getContract_id()}">
-        <button type="submit" id="submit" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#showlist">
-          Accompanied service list
-        </button>
-      </form>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<app-add-contract></app-add-contract>
-<script>
-  $(document).ready(function () {
-    let flag = $("#flag").val();
-    if(flag == 1){
-      $("#showlist").modal("show");
-    }
-  })
+    </div>
+    <table class="table table-info">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Facility</th>
+        <th>Customer</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Deposit</th>
+        <th>Payment</th>
+        <th colspan="2"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <!-- Button trigger modal -->
+          <button type="button" onclick="addContractDetail('${contract.getContract_id()}','${customer.getName()}')"
+                  class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addModal">
+            +
+          </button>
+        </td>
+        <td>
+          <!-- Button trigger modal -->
+          <form action="/contract?action=contractDetail" method="post">
+            <input type="hidden" name="contract_id" value="${contract.getContract_id()}">
+            <button type="submit" id="submit" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#showlist">
+              Accompanied service list
+            </button>
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <app-add-contract></app-add-contract>
+  </div>
+</div>
 
-  let listSubService = [];
-  let listServicePrice = [];
-  let lisSubServiceId = [];
-  function addService() {
-    let newService = document.getElementById("addNewService").value;
-    lisSubServiceId.push(GetSubServiceId(newService));
-    listServicePrice.push(GetSubServicePrice(newService));
-    listSubService.push(newService);
-
-    /*show table*/
-    let stringTable = ""
-    stringTable += '    <table class=\'table tab-content\'>\n' +
-      '        <tr>\n' +
-      '            <th>SubService</th>\n' +
-      '            <th>Unit</th>\n' +
-      '            <th>Price</th>\n' +
-      '            <th>Count</th>\n' +
-      '        </tr>\n';
-
-    stringTable +=
-      '        <tr>\n' +
-      '            <td>'+listSubService[0]+'</td>\n' +
-      '            <td>Unit</td>\n' +
-      '            <td>'+listServicePrice[0]+'</td>\n' +
-      '            <td id="count_0" name="count_0">1</td>\n' +
-      '        </tr>\n';
-    if(listSubService.length>0){
-      for (let i = 1; i < listSubService.length; i++) {
-        stringTable += '<tr>';
-        console.log("listSubService[i]" +listSubService[i] + ", i=" + i)
-        console.log("listSubService[i-1]" +listSubService[i-1])
-        if(listSubService[i] != listSubService[i-1]){
-          stringTable += '<td>'+listSubService[i]+'</td>';
-          stringTable += '<td></td>';
-          stringTable += '<td>'+listServicePrice[i]+'</td>';
-          stringTable += '<td id="count_'+lisSubServiceId[i]+'" name="count_'+lisSubServiceId[i]+'">1</td>\n';
-        }else {
-          let count_id = "count_" + (i-1);
-          console.log(count_id);
-          let count = parseInt(document.getElementById(count_id).innerText)+1;
-          console.log(count);
-          document.getElementById(count_id).innerHTML = ""+count;
-          console.log(count);
-        }
-      }
-    }
-    stringTable += '</tr>';
-    stringTable +='</table>';
-    document.getElementById("table").innerHTML = stringTable;
-    /*show table*/
-
-
-    document.getElementById("shownew").innerText = listSubService;
-    document.getElementById("subServices").value = lisSubServiceId;
-    caculPayment();
-  }
-  function caculPayment() {
-    let serviceId = document.getElementById("service_id").value;
-    let deposit = document.getElementById("deposit").value;
-    let sum = 0;
-    for(let price of listServicePrice){
-      sum += parseInt(price);
-    }
-    if(GetDays()>0){
-      document.getElementById("caculResult").value = GetDays()*GetServicePrice(serviceId) - deposit + sum;
-    }
-  }
-  function GetSubServiceId(id) {
-    let subId;
-    const els = document.getElementsByClassName("addNewService");
-    for (let el of els) {
-      if (el.value == id) {
-        subId = el.getAttribute('subId');
-        return subId;
-      }
-    }
-  }
-  function GetSubServicePrice(id) {
-    let priceData;
-    const els = document.getElementsByClassName("addNewService");
-    for (let el of els) {
-      if (el.value == id) {
-        priceData = el.getAttribute('data');
-        return priceData;
-      }
-    }
-  }
-  function GetServicePrice(serviceId) {
-    let priceData;
-    const els = document.getElementsByClassName("service_cus");
-    for (let el of els) {
-      if (el.value == serviceId) {
-        priceData = el.getAttribute('data');
-        return priceData;
-      }
-    }
-  }
-  function GetDays(){
-    var startdate = new Date(document.getElementById("startdate").value);
-    var enddate = new Date(document.getElementById("enddate").value);
-    var datediff = parseInt((enddate - startdate) / (24 * 3600 * 1000));
-    document.getElementById("messsage").innerText  = "";
-    if(datediff<0){
-      document.getElementById("messsage").innerText  = "let pick another date !";
-      document.getElementById("caculResult").value = "";
-      return;
-    }else if(datediff==0){
-      document.getElementById("messsage").innerText  = "";
-      return 1;
-    }
-    return datediff;
-  }
-  function checkTrueValue(){
-    let caculResult = document.getElementById("caculResult").value;
-    if(caculResult<0){
-      document.getElementById("messsage").innerText = "Payment value is false!";
-      alert("Payment value is false!");
-    }
-  }
-</script>

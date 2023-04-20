@@ -1,18 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-class Service {
-  name: string;
-  area: string;
-  rentprice: string;
-  maxperson: string;
-  renttypeId: string;
-  servicetypeId: string;
-  standar: string;
-  otherServiceDescription: string;
-  poolArea: string;
-  floor: string;
-  freeService: string;
-}
+import {Component, OnInit} from '@angular/core';
+import {Facility} from '../../module/facility';
 
 @Component({
   selector: 'app-list-service',
@@ -20,11 +7,42 @@ class Service {
   styleUrls: ['./list-service.component.css']
 })
 export class ListServiceComponent implements OnInit {
-  services: Service[];
+  services: Facility[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.services = [
+      {
+        id: '1',
+        name: 'Villa Beach Front',
+        area: '25000',
+        rentprice: '1000000',
+        maxperson: '10',
+        renttypeId: 'Day',
+        servicetypeId: 'Villa',
+        standar: 'vip',
+        otherServiceDescription: 'Có hồ bơi',
+        poolArea: '500',
+        floor: '4',
+        freeService: '1 Xe máy'
+      },
+      {
+        id: '2',
+        name: 'House Princess 02',
+        area: '10000',
+        rentprice: '4000000',
+        maxperson: '2',
+        renttypeId: 'mounth',
+        servicetypeId: 'House',
+        standar: 'normal',
+        otherServiceDescription: 'Có hồ bơi',
+        poolArea: '300',
+        floor: '1',
+        freeService: 'Có tivi'
+      }
+    ];
   }
 
 }

@@ -19,6 +19,7 @@ import { StudentDetailComponent } from './component/student-detail/student-detai
 import { StudentEditComponent } from './component/student-edit/student-edit.component';
 import { UserComponent } from './ss6/user/user.component';
 import { LoginComponent } from './ss6/login/login.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -49,4 +50,5 @@ import { LoginComponent } from './ss6/login/login.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
