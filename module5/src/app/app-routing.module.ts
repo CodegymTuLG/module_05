@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'category',
     loadChildren: () => import('./ss7/bt2/category/category.module').then(module => module.CategoryModule)
+  },
+  {
+    path: 'nav',
+    loadChildren: () => import('./ss7/bt2/shared/shared.module').then(module => module.SharedModule)
   }
 ];
 

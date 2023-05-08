@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ec0aa2f6-add6-45f6-9f29-8950ec98391e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +114,7 @@
       <workItem from="1682083942965" duration="2381000" />
       <workItem from="1682334339689" duration="792000" />
       <workItem from="1682336159823" duration="4603000" />
-      <workItem from="1683552662634" duration="932000" />
+      <workItem from="1683552662634" duration="1584000" />
     </task>
     <servers />
   </component>
