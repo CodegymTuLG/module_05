@@ -1,16 +1,70 @@
-<div class = "row" style="height: 81%">
-  <div class="col-2">
-    <app-navigation></app-navigation>
-  </div>
-<div class="col-10">
   <h1>Service</h1>
+<!--&lt;!&ndash;  search 1 trường&ndash;&gt;-->
+<!--  <form action="" >-->
+<!--    <div class="input-group">-->
+<!--      <h5>search one field</h5>-->
+<!--      <label for="searchName">Service name</label>-->
+<!--      <input #searchName-->
+<!--             type="text"-->
+<!--             class="form-control" name="searchName" id="searchName">-->
+<!--      <button class="btn btn-info" (click)="search(searchName.value)">Search</button>-->
+<!--    </div>-->
+<!--  </form><br>-->
+<!--  &lt;!&ndash;  search 2 trường&ndash;&gt;-->
+<!--  <form action="">-->
+<!--    <div class="input-group">-->
+<!--      <h5>search two field</h5><br>-->
+<!--      <label for="searchName2">Service name</label>-->
+<!--      <input #searchName2-->
+<!--             type="text"-->
+<!--             class="form-control" name="searchName2" id="searchName2">-->
+<!--      <label for="searchRentPrice">Rent price</label>-->
+<!--      <input #searchRentPrice-->
+<!--             type="text"-->
+<!--             class="form-control" name="searchRentPrice" id="searchRentPrice">-->
+<!--      <button class="btn btn-info" (click)="search2(searchName2.value, searchRentPrice.value)">Search</button>-->
+<!--    </div><br>-->
+<!--  </form><br>-->
+<!--  &lt;!&ndash;  search 1 trường + search giá trị giữa&ndash;&gt;-->
+<!--  <form action="">-->
+<!--    <div class="input-group">-->
+<!--      <h5>search two field</h5><br>-->
+<!--      <label for="searchName3">Service name</label>-->
+<!--      <input #searchName3-->
+<!--             type="text"-->
+<!--             class="form-control" name="searchName3" id="searchName3">-->
+<!--      <label for="searchRentPriceFrom">Rent price from</label>-->
+<!--      <input #searchRentPriceFrom-->
+<!--             type="number"-->
+<!--             class="form-control" name="searchRentPriceFrom" id="searchRentPriceFrom">-->
+<!--      <label for="searchRentPriceTo">Rent price to</label>-->
+<!--      <input #searchRentPriceTo-->
+<!--             type="number"-->
+<!--             class="form-control" name="searchRentPriceTo" id="searchRentPriceTo">-->
+<!--      <button class="btn btn-info" (click)="search3(searchName3.value, searchRentPriceFrom.value, searchRentPriceTo.value)">Search</button>-->
+<!--    </div><br>-->
+<!--  </form><br>-->
+<!--  &lt;!&ndash;  search 2 trường + search child&ndash;&gt;-->
+<!--  <form action="">-->
+<!--    <div class="input-group">-->
+<!--      <h5>search two field</h5><br>-->
+<!--      <label for="name">Service name</label>-->
+<!--      <input #name-->
+<!--             type="text"-->
+<!--             class="form-control" name="name" id="name">-->
+<!--      <label>Rent type</label>-->
+<!--      <select name="rentType" class="form-select" #rentType>-->
+<!--        <option *ngFor="let rentType of rentTypes" ngValue="{{rentType.id}}" >{{rentType.name}}</option>-->
+<!--      </select>-->
+<!--      <button class="btn btn-info" (click)="search4(name.value, rentType.value)">Search</button>-->
+<!--    </div><br>-->
+<!--  </form><br>-->
   <div class="d-flex justify-content-end" style="width: 95%;">
-    <a [routerLink]="['/addservice']">
-      <button class="btn btn-primary">Register new service</button>
-    </a><br><br>
+    <a [routerLink]="['/addservice']"><button class="btn btn-primary">Register new service</button></a><br><br>
   </div>
-  <table class="table table-info" style="width: 98%;">
-    <tr style="text-align: center">
+  <table class="table table-info">
+    <thead>
+    <tr>
       <th>#</th>
       <th>Service name</th>
       <th>Area</th>
@@ -26,33 +80,53 @@
       <th>EDIT</th>
       <th>DELETE</th>
     </tr>
+    </thead>
+    <tbody>
     <tr *ngFor="let service of services; index as i">
       <td>{{i + 1}}</td>
       <td>{{service.name}}</td>
       <td>{{service.area}}</td>
       <td>{{service.rentprice}}</td>
       <td>{{service.maxperson}}</td>
-      <td>{{service.renttypeId}}</td>
-      <td>{{service.servicetypeId}}</td>
+      <td>{{service.rentType.name}}</td>
+      <td>{{service.serviceType.name}}</td>
       <td>{{service.standar}}</td>
       <td>{{service.otherServiceDescription}}</td>
       <td>{{service.poolArea}}</td>
       <td>{{service.floor}}</td>
       <td>{{service.freeService}}</td>
       <td>
-        <form action="/service?action=edit" method="post">
-          <input type="hidden" name="editServiceId" id="editServiceId" value="${service.getService_id()}">
-          <button type="submit" class="btn btn-info">Edit</button>
+        <form>
+          <button type="button" class="btn btn-info" routerLink="editservice/{{service.id}}" >Edit</button>
         </form>
       </td>
       <td>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modelId" (click)="takeDeleteId(service);">
           Delete
         </button>
       </td>
     </tr>
+    </tbody>
   </table>
-</div>
-</div>
-<router-outlet></router-outlet>
+  <!-- Modal -->
+  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modelTitleId"></h4>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        Do you really want to delete?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(deleteId)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

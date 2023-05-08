@@ -1,0 +1,14 @@
+{
+  "students":[
+    { "id": 1, "name": "Phạm Văn Trung", "score": "28,5", "birthDay": "10-05-1991" },
+    { "id": 2, "name": "Nguyễn Thị Hồng", "score": "24,5", "birthDay": "18-09-1989" },
+    { "id": 3, "name": "Trần Văn Tài", "score": "27", "birthDay": "20-02-1990" },
+    { "id": 4, "name": "Lê Thị Liên", "score": "30", "birthDay": "05-03-1993" },
+    { "id": 5, "name": "Nguyễn Văn Nam", "score": "29,5", "birthDay": "15-07-1992" },
+    { "id": 6, "name": "Vũ Thị Nga", "score": "25", "birthDay": "28-01-1995" },
+    { "id": 7, "name": "Trần Thanh Tâm", "score": "28", "birthDay": "12-09-1994" },
+    { "id": 8, "name": "Lương Thị Hà", "score": "26,5", "birthDay": "29-05-1991" },
+    { "id": 9, "name": "Ngô Văn Đôn", "score": "24", "birthDay": "23-12-1997" },
+    { "id": 10, "name": "Phạm Thị Mai", "score": "27,5", "birthDay": "02-08-1996" }
+  ]
+}

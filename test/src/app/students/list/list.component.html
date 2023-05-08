@@ -1,0 +1,59 @@
+<!--search 1 trường-->
+<!--<form action="">-->
+<!--  <div class="input-group">-->
+<!--    <label for="Name">Name</label>-->
+<!--    <input #Name-->
+<!--      type="text"-->
+<!--      class="form-control" name="Name" id="Name" aria-describedby="helpId" placeholder="">-->
+<!--  </div>-->
+<!--  <button type="button" class="btn btn-primary" (click)="search1(Name.value)">Search</button>-->
+<!--</form>-->
+<!--search khoảng thời gian-->
+<!--<form action="">-->
+<!--  <div class="input-group">-->
+<!--    <label>BirthDay</label>-->
+<!--    <input #from-->
+<!--           type="date"-->
+<!--           class="form-control" name="" id="from" aria-describedby="helpId" placeholder="from">-->
+<!--    <input #to-->
+<!--           type="date"-->
+<!--           class="form-control" name="" id="to" aria-describedby="helpId" placeholder="to">-->
+<!--  </div>-->
+<!--  <button type="button" class="btn btn-primary" (click)="search2(from.value, to.value)">Search</button>-->
+<!--</form>-->
+<!--search 2 trường-->
+<form action="">
+  <div class="input-group">
+    <label>Name</label>
+    <input #name
+           type="text"
+           class="form-control" name="" id="name" aria-describedby="helpId" placeholder="Name">
+  </div>
+  <div class="input-group">
+    <label>Score</label>
+    <input #score
+           type="text"
+           class="form-control" name="" id="score" aria-describedby="helpId" placeholder="Score">
+  </div>
+  <button type="button" class="btn btn-primary" (click)="search3(name.value, score.value)">Search</button>
+</form>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Birth Day</th>
+    <th>Score</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of students; index as i">
+    <td scope="row">{{i + 1}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.birthDay}}</td>
+    <td>{{student.score}}</td>
+  </tr>
+  </tbody>
+</table>
+

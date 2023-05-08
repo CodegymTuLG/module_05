@@ -25,7 +25,10 @@
   let listSubService = [];
   let listServicePrice = [];
   let lisSubServiceId = [];
-
+  function takeDeleteId (service) {
+    console.log(service);
+    document.getElementById("deleteId").value = service;
+  }
   function addService() {
     let newService = document.getElementById("addNewService").value;
     lisSubServiceId.push(GetSubServiceId(newService));

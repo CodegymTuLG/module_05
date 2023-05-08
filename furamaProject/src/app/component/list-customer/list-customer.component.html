@@ -1,17 +1,4 @@
-<div class = "row" style="height: 81%">
-  <div class="col-2">
-    <app-navigation></app-navigation>
-  </div>
-  <div class="col-10">
 <h1>Customer</h1>
-  <form action="/customer?action=search" method="post">
-    <input name="searchName" placeholder="input name">
-    <input name="searchAddress" placeholder="input address">
-    <select name="searchType" id="searchType">
-    </select>
-    <button class="btn btn-info" type="submit">Search</button>
-  </form>
-
   <div class="d-flex justify-content-end" style="width: 95%;">
     <a [routerLink]="['/addcustomer']"><button class="btn btn-primary">Register new customer</button></a><br><br>
   </div>
@@ -32,17 +19,28 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr *ngFor="let customer of customers; index as i">
+      <td>{{i + 1}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.birthday}}</td>
+      <td>{{customer.sex}}</td>
+      <td>{{customer.cardid}}</td>
+      <td>{{customer.phonenumber}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.customerType.name}}</td>
+      <td>
+          <input type="hidden" name="editServiceId" id="editServiceId" value="">
+          <a class="btn btn-info" routerLink="editcustomer/{{customer.id}}">Edit</a>
+      </td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Delete
+        </button>
+      </td>
     </tr>
     </tbody>
   </table>
-  </div>
-</div>
-<router-outlet></router-outlet>
+
+

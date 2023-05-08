@@ -20,6 +20,8 @@ import { StudentEditComponent } from './component/student-edit/student-edit.comp
 import { UserComponent } from './ss6/user/user.component';
 import { LoginComponent } from './ss6/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
+import { Bt1Component } from './ss7/bt1/bt1.component';
+import { DictionayPageComponentComponent } from './ss7/bt1/component/dictionay-page-component/dictionay-page-component.component';
 
 @NgModule({
   declarations: [
@@ -40,15 +42,19 @@ import { RouterModule, Routes } from '@angular/router';
     StudentEditComponent,
     UserComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    Bt1Component,
+    DictionayPageComponentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
 export class AppModule { }
+

@@ -1,57 +1,58 @@
 <h1>EDIT SERVICE</h1><br>
-<form action="/service?action=update" method="post" class="row g-3" style="width: 95%">
-  <input type="hidden" name="service_id">
+<form method="post" class="row g-3" style="width: 95%" *ngIf="rfService" [formGroup]="rfService">
   <div class="col-md-6">
     <label class="form-label">Service name</label>
-    <input type="text" class="form-control" name="name">
+    <input type="text" class="form-control" name="name" formControlName="name">
   </div>
   <div class="col-md-2">
     <label class="form-label">Area</label>
-    <input type="number" class="form-control" name="area">
+    <input type="number" class="form-control" name="area" formControlName="area">
   </div>
   <div class="col-md-4">
     <label class="form-label">Rent Price</label>
-    <input type="number" class="form-control" name="rentprice">
+    <input type="number" class="form-control" name="rentprice" formControlName="rentprice">
   </div>
 
   <div class="col-md-3">
     <label class="form-label">Person limit</label>
-    <input type="number" class="form-control" name="maxperson">
+    <input type="number" class="form-control" name="maxperson" formControlName="maxperson">
   </div>
   <div class="col-md-3">
     <label class="form-label">Rent Type</label>
-    <select name="renttype_id" class="form-select">
+    <select name="rentType" class="form-select" formControlName="rentType" >
+      <option *ngFor="let rentType of rentTypes" [ngValue]="rentType" >{{rentType.name}}</option>
     </select>
   </div>
   <div class="col-md-3">
     <label class="form-label">Service Type</label>
-    <select name="servicetype_id" class="form-select">
+    <select name="serviceType" class="form-select" formControlName="serviceType">
+      <option *ngFor="let serviceType of serviceTypes" [ngValue]="serviceType" >{{serviceType.name}}</option>
     </select>
   </div>
   <div class="col-md-3">
     <label class="form-label">Standard</label>
-    <input type="text" class="form-control" name="standar">
+    <input type="text" class="form-control" name="standar" formControlName="standar">
   </div>
 
   <div class="col-md-6">
     <label class="form-label">Other service description</label>
-    <input type="text" class="form-control" name="other_service_description">
+    <input type="text" class="form-control" name="otherServiceDescription" formControlName="otherServiceDescription">
   </div>
   <div class="col-md-3">
     <label class="form-label">Pool area</label>
-    <input type="number" class="form-control" name="pool_area">
+    <input type="number" class="form-control" name="poolArea" formControlName="poolArea">
   </div>
   <div class="col-md-3">
     <label class="form-label">Floor</label>
-    <input type="number" class="form-control" name="floor">
+    <input type="number" class="form-control" name="floor" formControlName="floor">
   </div>
 
   <div class="col-md-12">
     <label class="form-label">Free service</label>
-    <input type="text" class="form-control" name="free_service">
+    <input type="text" class="form-control" name="freeService" formControlName="freeService">
   </div>
 
   <div class="col-12 d-flex justify-content-end">
-    <button type="submit" class="btn btn-primary">Edit</button>
+    <button type="submit" class="btn btn-primary" (click)="edit()">Edit</button>
   </div>
 </form>

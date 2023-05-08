@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Facility} from '../../module/facility';
+import {FacilityServiceService} from '../../service/facility-service.service';
+import {ServiceType} from '../../module/serviceType';
+import {RentType} from '../../module/rentType';
 
 @Component({
   selector: 'app-list-service',
@@ -8,41 +11,56 @@ import {Facility} from '../../module/facility';
 })
 export class ListServiceComponent implements OnInit {
   services: Facility[];
-
-  constructor() {
+  serviceTypes: ServiceType[];
+  rentTypes: RentType[];
+  deleteId: number;
+  constructor(private facilityService: FacilityServiceService) {
   }
 
   ngOnInit(): void {
-    this.services = [
-      {
-        id: '1',
-        name: 'Villa Beach Front',
-        area: '25000',
-        rentprice: '1000000',
-        maxperson: '10',
-        renttypeId: 'Day',
-        servicetypeId: 'Villa',
-        standar: 'vip',
-        otherServiceDescription: 'Có hồ bơi',
-        poolArea: '500',
-        floor: '4',
-        freeService: '1 Xe máy'
-      },
-      {
-        id: '2',
-        name: 'House Princess 02',
-        area: '10000',
-        rentprice: '4000000',
-        maxperson: '2',
-        renttypeId: 'mounth',
-        servicetypeId: 'House',
-        standar: 'normal',
-        otherServiceDescription: 'Có hồ bơi',
-        poolArea: '300',
-        floor: '1',
-        freeService: 'Có tivi'
-      }
-    ];
+    this.facilityService.findAll().subscribe(next => {
+      this.services = next;
+    });
+    this.facilityService.serviceTypeSelect().subscribe(next => {
+      this.serviceTypes = next;
+    });
+    this.facilityService.rentTypeSelect().subscribe( next => {
+      this.rentTypes = next;
+    });
   }
 
+  search(name: string) {
+    this.facilityService.search(name).subscribe((result: any[]) => {
+      this.services = result;
+    });
+    // this.services = this.facilityService.showList();
+    // }
+
+  }
+  search2(name: string, rentprice: string) {
+    this.facilityService.search2(name, rentprice).subscribe((result: any[]) => {
+      this.services = result;
+    });
+  }
+  search3(name: string, rentpriceFrom: string, rentpriceTo: string) {
+    this.facilityService.search3(name, rentpriceFrom, rentpriceTo).subscribe((result: any[]) => {
+      this.services = result;
+    });
+  }
+
+  search4(name: string, rentType: string) {
+    this.facilityService.search4(name, rentType).subscribe((result: any[]) => {
+      this.services = result;
+    });
+  }
+
+  takeDeleteId(service: Facility) {
+    this.deleteId = service.id;
+  }
+
+  delete(id: number) {
+    this.facilityService.delete(id).subscribe( next => {
+      this.ngOnInit();
+    });
+  }
 }

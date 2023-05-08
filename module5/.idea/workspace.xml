@@ -5,26 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec0aa2f6-add6-45f6-9f29-8950ec98391e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../A0622I1-Lê Gia Tú-báo cáo tuần.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../A0622I1-Lê Gia Tú-báo cáo tuần.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furamaProject/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/add-contract/add-contract.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/add-contract/add-contract.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/add-customer/add-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/add-customer/add-customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/add-customer/add-customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/add-customer/add-customer.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/add-service/add-service.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/add-service/add-service.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/edit-customer/edit-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/edit-customer/edit-customer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/edit-service/edit-service.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/edit-service/edit-service.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/edit-customer/edit-customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/edit-customer/edit-customer.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/header/header.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/list-contract/list-contract.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/list-contract/list-contract.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/list-contract/list-contract.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/list-contract/list-contract.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/list-customer/list-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/list-customer/list-customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/list-customer/list-customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/list-customer/list-customer.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/list-service/list-service.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/list-service/list-service.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/list-service/list-service.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/list-service/list-service.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/component/navigation/navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/component/navigation/navigation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../furamaProject/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/module/contract.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/module/contract.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/module/customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/module/customer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furamaProject/src/app/module/facility.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../furamaProject/src/app/module/facility.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/router/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/router.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/router/router.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
     </list>
@@ -51,23 +53,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/Study/CodegymStudyMaterials/module_05/module5",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.protractor.protractor_package": "E:/Study/CodegymStudyMaterials/module_05/module5/node_modules/protractor",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "E:\\Study\\CodegymStudyMaterials\\module_05\\module5\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Study/CodegymStudyMaterials/module_05/module5/src/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.protractor.protractor_package&quot;: &quot;E:/Study/CodegymStudyMaterials/module_05/module5/node_modules/protractor&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\Study\\CodegymStudyMaterials\\module_05\\module5\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Study\CodegymStudyMaterials\module_05\module5\src\app" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Tests (module5)" type="JavaScriptTestRunnerKarma">
       <config-file value="$PROJECT_DIR$/karma.conf.js" />
@@ -120,7 +127,14 @@
       <workItem from="1681901464992" duration="3495000" />
       <workItem from="1681908318202" duration="2408000" />
       <workItem from="1681981325540" duration="267000" />
-      <workItem from="1681984039709" duration="1562000" />
+      <workItem from="1681984039709" duration="1631000" />
+      <workItem from="1682040154229" duration="687000" />
+      <workItem from="1682079502190" duration="19000" />
+      <workItem from="1682079545215" duration="12000" />
+      <workItem from="1682081383123" duration="341000" />
+      <workItem from="1682083942965" duration="2381000" />
+      <workItem from="1682334339689" duration="792000" />
+      <workItem from="1682336159823" duration="4603000" />
     </task>
     <servers />
   </component>

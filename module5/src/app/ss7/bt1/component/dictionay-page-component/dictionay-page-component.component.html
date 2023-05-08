@@ -1,0 +1,8 @@
+<table class="table">
+  <tbody>
+  <tr *ngFor="let word of iwords; index as i">
+    <td scope="row">{{word.word}} <a routerLink="detail">mean</a></td>
+  </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>

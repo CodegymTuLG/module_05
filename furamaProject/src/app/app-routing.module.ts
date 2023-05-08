@@ -13,11 +13,11 @@ const routes: Routes = [
   { path: 'listcontract', component: ListContractComponent},
   { path: 'listcustomer', component: ListCustomerComponent},
   { path: 'listservice', component: ListServiceComponent},
-  { path: 'editservice', component: EditServiceComponent},
-  { path: 'editcustomer', component: EditCustomerComponent},
+  { path: 'listservice/editservice/:id', component: EditServiceComponent},
+  { path: 'listcustomer/editcustomer/:id', component: EditCustomerComponent},
   { path: 'addcustomer', component: AddCustomerComponent},
   { path: 'addcontract', component: AddContractComponent},
-  { path: 'addservice', component: AddServiceComponent},
+  { path: 'addservice', component: AddServiceComponent}
 ];
 
 @NgModule({

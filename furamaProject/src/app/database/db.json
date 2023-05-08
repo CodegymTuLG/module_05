@@ -1,0 +1,227 @@
+{
+  "services": [{
+    "id": 4,
+    "name": "Hotel Mahatan",
+    "area": 50,
+    "rentprice": 50000000,
+    "maxperson": 50,
+    "rentType": {
+      "id": 4,
+      "name": "year"
+    },
+    "serviceType": {
+      "id": 1,
+      "name": "Villa"
+    },
+    "standar": "VIP",
+    "otherServiceDescription": "Máy bay",
+    "poolArea": 5,
+    "floor": 20,
+    "freeService": "No service"
+  },{
+    "id": 2,
+    "name": "House Princess 02",
+    "area": 10000,
+    "rentprice": 4000000,
+    "maxperson": 2,
+    "rentType": {
+      "id": 2,
+      "name": "day"
+    },
+    "serviceType": {
+      "id": 2,
+      "name": "House"
+    },
+    "standar": "normal",
+    "otherServiceDescription": "Có hồ bơi",
+    "poolArea": 300,
+    "floor": 1,
+    "freeService": "Có tivi"
+  }],
+  "rentTypes": [
+    {
+      "id": 1,
+      "name": "hour"
+    },
+    {
+      "id": 2,
+      "name": "day"
+    },
+    {
+      "id": 3,
+      "name": "month"
+    },
+    {
+      "id": 4,
+      "name": "year"
+    }
+  ],
+  "serviceType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Nguyễn Than Trung",
+      "birthday": "10-01-1998",
+      "sex": "Nam",
+      "cardid": "E65484815",
+      "phonenumber": "0983555111",
+      "email": "trung.nguyen@gmail.com",
+      "address": "Cẩm Lệ, Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Than Nhân",
+      "birthday": "10-01-1998",
+      "sex": "Nam",
+      "cardid": "E65484815",
+      "phonenumber": "0983555111",
+      "email": "trung.nguyen@gmail.com",
+      "address": "Cẩm Lệ, Đà Nẵng",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "startdate": "2023-04-30",
+      "enddate": "2023-05-05",
+      "deposit": "5000000",
+      "employee": {
+        "id": 1,
+        "name": "Đào Thị Mai"
+      },
+      "customer": {
+        "id": 1,
+        "name": "Nguyễn Than Trung",
+        "birthday": "10-01-1998",
+        "sex": "Nam",
+        "cardid": "E65484815",
+        "phonenumber": "0983555111",
+        "email": "trung.nguyen@gmail.com",
+        "address": "Cẩm Lệ, Đà Nẵng",
+        "customerType": {
+          "id": 2,
+          "name": "Platinium"
+        }
+      },
+      "service": {
+        "id": 4,
+        "name": "Hotel Mahatan",
+        "area": 50,
+        "rentprice": 50000000,
+        "maxperson": 50,
+        "rentType": {
+          "id": 4,
+          "name": "year"
+        },
+        "serviceType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "standar": "VIP",
+        "otherServiceDescription": "Máy bay",
+        "poolArea": 5,
+        "floor": 20,
+        "freeService": "No service"
+      },
+      "payment": "752000000"
+    },
+    {
+      "id": 2,
+      "startdate": "2023-04-30",
+      "enddate": "2023-05-05",
+      "deposit": "5000000",
+      "employee": {
+        "id": 2,
+        "name": "Lê Văn Tài"
+      },
+      "customer": {
+        "id": 2,
+        "name": "Nguyễn Than Nhân",
+        "birthday": "10-01-1998",
+        "sex": "Nam",
+        "cardid": "E65484815",
+        "phonenumber": "0983555111",
+        "email": "trung.nguyen@gmail.com",
+        "address": "Cẩm Lệ, Đà Nẵng",
+        "customerType": {
+          "id": 3,
+          "name": "Gold"
+        }
+      },
+      "service": {
+        "id": 2,
+        "name": "House Princess 02",
+        "area": 10000,
+        "rentprice": 4000000,
+        "maxperson": 2,
+        "rentType": {
+          "id": 2,
+          "name": "day"
+        },
+        "serviceType": {
+          "id": 2,
+          "name": "House"
+        },
+        "standar": "normal",
+        "otherServiceDescription": "Có hồ bơi",
+        "poolArea": 300,
+        "floor": 1,
+        "freeService": "Có tivi"
+      },
+      "payment": "752000000"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Đào Thị Mai"
+    },
+    {
+      "id": 2,
+      "name": "Lê Văn Tài"
+    }
+  ]
+}
